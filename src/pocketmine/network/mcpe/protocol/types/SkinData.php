@@ -73,7 +73,6 @@ class SkinData{
 		return $this->resourcePatch;
 	}
 
-
 	public function getSkinImage() : SkinImage{
 		return $this->skinImage;
 	}
