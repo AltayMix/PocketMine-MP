@@ -23,11 +23,8 @@ declare(strict_types=1);
 
 namespace pocketmine\network\mcpe\protocol;
 
-<<<<<<< HEAD
-=======
 #include <rules/DataPacket.h>
 
->>>>>>> upstream/stable
 use pocketmine\network\mcpe\NetworkSession;
 
 class CompletedUsingItemPacket extends DataPacket{

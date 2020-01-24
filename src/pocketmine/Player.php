@@ -1083,12 +1083,9 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	/**
 	 * @return void
 	 */
->>>>>>> upstream/stable
 	protected function sendRespawnPacket(Vector3 $pos, int $respawnState = RespawnPacket::SEARCHING_FOR_SPAWN){
 		$pk = new RespawnPacket();
 		$pk->position = $pos->add(0, $this->baseOffset, 0);
@@ -1552,7 +1549,6 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 				break;
 			}
 
-<<<<<<< HEAD
 			assert($newPos->x !== null and $newPos->y !== null and $newPos->z !== null);
 
 			$distanceSquared = $newPos->distanceSquared($this);
@@ -1587,11 +1583,6 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 				if($this->isSurvival() and !$revert and $diff > 0.0625){
 					$ev = new PlayerIllegalMoveEvent($this, $newPos, new Vector3($this->lastX, $this->lastY, $this->lastZ));
 					$ev->setCancelled($this->allowMovementCheats);
-=======
-			if($this->isSurvival() and $diff > 0.0625){
-				$ev = new PlayerIllegalMoveEvent($this, $newPos, new Vector3($this->lastX, $this->lastY, $this->lastZ));
-				$ev->setCancelled($this->allowMovementCheats);
->>>>>>> upstream/stable
 
 					$ev->call();
 
@@ -1891,11 +1882,7 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 
 		$animations = [];
 		foreach($packet->clientData["AnimatedImageData"] as $animation){
-<<<<<<< HEAD
-			$animations[] = new SkinAnimation(new SkinImage($animation["ImageHeight"], $animation["ImageWidth"], $animation["Image"]), $animation["Type"], $animation["Frames"]);
-=======
 			$animations[] = new SkinAnimation(new SkinImage($animation["ImageHeight"], $animation["ImageWidth"], base64_decode($animation["Image"], true)), $animation["Type"], $animation["Frames"]);
->>>>>>> upstream/stable
 		}
 
 		$skinData = new SkinData(
@@ -1905,11 +1892,7 @@ class Player extends Human implements CommandSender, ChunkLoader, IPlayer{
 			$animations,
 			new SkinImage($packet->clientData["CapeImageHeight"], $packet->clientData["CapeImageWidth"], base64_decode($packet->clientData["CapeData"] ?? "")),
 			base64_decode($packet->clientData["SkinGeometryData"] ?? ""),
-<<<<<<< HEAD
-			base64_decode($packet->clientData["AnimationData"] ?? ""),
-=======
 			base64_decode($packet->clientData["SkinAnimationData"] ?? ""),
->>>>>>> upstream/stable
 			$packet->clientData["PremiumSkin"] ?? false,
 			$packet->clientData["PersonaSkin"] ?? false,
 			$packet->clientData["CapeOnClassicSkin"] ?? false,

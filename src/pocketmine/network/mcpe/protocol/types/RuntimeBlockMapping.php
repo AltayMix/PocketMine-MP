@@ -28,11 +28,6 @@ use pocketmine\nbt\NBT;
 use pocketmine\nbt\NetworkLittleEndianNBTStream;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\ListTag;
-<<<<<<< HEAD
-use pocketmine\nbt\tag\StringTag;
-use pocketmine\utils\BinaryDataException;
-=======
->>>>>>> upstream/stable
 use function file_get_contents;
 use function getmypid;
 use function json_decode;

@@ -1584,11 +1584,6 @@ class Server{
 	/**
 	 * @param TextContainer|string $message
 	 * @param CommandSender[]      $recipients
-<<<<<<< HEAD
-	 *
-	 * @return int
-=======
->>>>>>> upstream/stable
 	 */
 	public function broadcastMessage($message, array $recipients = null) : int{
 		if(!is_array($recipients)){

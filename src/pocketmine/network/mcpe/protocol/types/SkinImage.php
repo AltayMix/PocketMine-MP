@@ -23,11 +23,8 @@ declare(strict_types=1);
 
 namespace pocketmine\network\mcpe\protocol\types;
 
-<<<<<<< HEAD
-=======
 use function strlen;
 
->>>>>>> upstream/stable
 class SkinImage{
 
 	/** @var int */
@@ -38,15 +35,12 @@ class SkinImage{
 	private $data;
 
 	public function __construct(int $height, int $width, string $data){
-<<<<<<< HEAD
-=======
 		if($height < 0 or $width < 0){
 			throw new \InvalidArgumentException("Height and width cannot be negative");
 		}
 		if(($expected = $height * $width * 4) !== ($actual = strlen($data))){
 			throw new \InvalidArgumentException("Data should be exactly $expected bytes, got $actual bytes");
 		}
->>>>>>> upstream/stable
 		$this->height = $height;
 		$this->width = $width;
 		$this->data = $data;

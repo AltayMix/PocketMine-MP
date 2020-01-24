@@ -38,15 +38,9 @@ use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\network\mcpe\protocol\types\CommandOriginData;
 use pocketmine\network\mcpe\protocol\types\EntityLink;
-<<<<<<< HEAD
-use pocketmine\network\mcpe\protocol\types\SkinData;
-use pocketmine\network\mcpe\protocol\types\SkinImage;
-use pocketmine\network\mcpe\protocol\types\SkinAnimation;
-=======
 use pocketmine\network\mcpe\protocol\types\SkinAnimation;
 use pocketmine\network\mcpe\protocol\types\SkinData;
 use pocketmine\network\mcpe\protocol\types\SkinImage;
->>>>>>> upstream/stable
 use pocketmine\network\mcpe\protocol\types\StructureSettings;
 use pocketmine\utils\BinaryStream;
 use pocketmine\utils\UUID;
@@ -109,12 +103,9 @@ class NetworkBinaryStream extends BinaryStream{
 		return new SkinData($skinId, $skinResourcePatch, $skinData, $animations, $capeData, $geometryData, $animationData, $premium, $persona, $capeOnClassic, $capeId);
 	}
 
-<<<<<<< HEAD
-=======
 	/**
 	 * @return void
 	 */
->>>>>>> upstream/stable
 	public function putSkin(SkinData $skin){
 		$this->putString($skin->getSkinId());
 		$this->putString($skin->getResourcePatch());

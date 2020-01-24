@@ -233,11 +233,6 @@ class AvailableCommandsPacket extends DataPacket{
 	/**
 	 * @param CommandEnum[] $enums
 	 * @param string[]      $enumValues
-<<<<<<< HEAD
-	 *
-	 * @return CommandEnumConstraint
-=======
->>>>>>> upstream/stable
 	 */
 	protected function getEnumConstraint(array $enums, array $enumValues) : CommandEnumConstraint{
 		//wtf, what was wrong with an offset inside the enum? :(
@@ -264,10 +259,6 @@ class AvailableCommandsPacket extends DataPacket{
 	}
 
 	/**
-<<<<<<< HEAD
-	 * @param CommandEnumConstraint $constraint
-=======
->>>>>>> upstream/stable
 	 * @param int[]                 $enumIndexes string enum name -> int index
 	 * @param int[]                 $enumValueIndexes string value -> int index
 	 */

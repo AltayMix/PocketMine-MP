@@ -32,23 +32,11 @@ interface SkinAdapter{
 
 	/**
 	 * Allows you to convert a skin entity to skin data.
-<<<<<<< HEAD
-	 *
-	 * @param Skin $skin
-	 * @return SkinData
-=======
->>>>>>> upstream/stable
 	 */
 	public function toSkinData(Skin $skin) : SkinData;
 
 	/**
 	 * Allows you to convert skin data to a skin entity.
-<<<<<<< HEAD
-	 *
-	 * @param SkinData $data
-	 * @return Skin
-=======
->>>>>>> upstream/stable
 	 */
 	public function fromSkinData(SkinData $data) : Skin;
 }
