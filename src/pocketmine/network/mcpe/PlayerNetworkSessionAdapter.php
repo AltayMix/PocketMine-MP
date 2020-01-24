@@ -23,7 +23,6 @@ declare(strict_types=1);
 
 namespace pocketmine\network\mcpe;
 
-
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\ActorEventPacket;
 use pocketmine\network\mcpe\protocol\ActorFallPacket;
@@ -67,7 +66,10 @@ use pocketmine\network\mcpe\protocol\ShowCreditsPacket;
 use pocketmine\network\mcpe\protocol\SpawnExperienceOrbPacket;
 use pocketmine\network\mcpe\protocol\TextPacket;
 use pocketmine\network\mcpe\protocol\types\SkinAdapterSingleton;
+<<<<<<< HEAD
 use pocketmine\network\mcpe\protocol\types\SkinData;
+=======
+>>>>>>> upstream/stable
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\timings\Timings;
@@ -268,9 +270,6 @@ class PlayerNetworkSessionAdapter extends NetworkSession{
 
 	/**
 	 * Hack to work around a stupid bug in Minecraft W10 which causes empty strings to be sent unquoted in form responses.
-	 *
-	 * @param string $json
-	 * @param bool   $assoc
 	 *
 	 * @return mixed
 	 */

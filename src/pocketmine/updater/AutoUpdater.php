@@ -46,10 +46,6 @@ class AutoUpdater{
 	/** @var VersionString|null */
 	protected $newVersion;
 
-	/**
-	 * @param Server $server
-	 * @param string $endpoint
-	 */
 	public function __construct(Server $server, string $endpoint){
 		$this->server = $server;
 		$this->endpoint = "http://$endpoint/api/";
@@ -62,7 +58,7 @@ class AutoUpdater{
 	/**
 	 * Callback used at the end of the update checking task
 	 *
-	 * @param array $updateInfo
+	 * @return void
 	 */
 	public function checkUpdateCallback(array $updateInfo){
 		$this->updateInfo = $updateInfo;
@@ -83,8 +79,6 @@ class AutoUpdater{
 
 	/**
 	 * Returns whether there is an update available.
-	 *
-	 * @return bool
 	 */
 	public function hasUpdate() : bool{
 		return $this->newVersion !== null;
@@ -92,6 +86,8 @@ class AutoUpdater{
 
 	/**
 	 * Posts a warning to the console to tell the user there is an update available
+	 *
+	 * @return void
 	 */
 	public function showConsoleUpdate(){
 		$messages = [
@@ -108,13 +104,16 @@ class AutoUpdater{
 	/**
 	 * Shows a warning to a player to tell them there is an update available
 	 *
-	 * @param Player $player
+	 * @return void
 	 */
 	public function showPlayerUpdate(Player $player){
 		$player->sendMessage(TextFormat::DARK_PURPLE . "The version of " . $this->server->getName() . " that this server is running is out of date. Please consider updating to the latest version.");
 		$player->sendMessage(TextFormat::DARK_PURPLE . "Check the console for more details.");
 	}
 
+	/**
+	 * @return void
+	 */
 	protected function showChannelSuggestionStable(){
 		$this->printConsoleMessage([
 			"It appears you're running a Stable build, when you've specified that you prefer to run " . ucfirst($this->getChannel()) . " builds.",
@@ -122,6 +121,9 @@ class AutoUpdater{
 		]);
 	}
 
+	/**
+	 * @return void
+	 */
 	protected function showChannelSuggestionBeta(){
 		$this->printConsoleMessage([
 			"It appears you're running a Beta build, when you've specified that you prefer to run Stable builds.",
@@ -129,6 +131,9 @@ class AutoUpdater{
 		]);
 	}
 
+	/**
+	 * @return void
+	 */
 	protected function printConsoleMessage(array $lines, string $logLevel = \LogLevel::INFO){
 		$logger = $this->server->getLogger();
 
@@ -151,6 +156,8 @@ class AutoUpdater{
 
 	/**
 	 * Schedules an AsyncTask to check for an update.
+	 *
+	 * @return void
 	 */
 	public function doCheck(){
 		$this->server->getAsyncPool()->submitTask(new UpdateCheckTask($this->endpoint, $this->getChannel()));
@@ -158,6 +165,8 @@ class AutoUpdater{
 
 	/**
 	 * Checks the update information against the current server version to decide if there's an update
+	 *
+	 * @return void
 	 */
 	protected function checkUpdate(){
 		if($this->updateInfo === null){
@@ -179,8 +188,6 @@ class AutoUpdater{
 
 	/**
 	 * Returns the channel used for update checking (stable, beta, dev)
-	 *
-	 * @return string
 	 */
 	public function getChannel() : string{
 		$channel = strtolower($this->server->getProperty("auto-updater.preferred-channel", "stable"));
@@ -193,8 +200,6 @@ class AutoUpdater{
 
 	/**
 	 * Returns the host used for update checks.
-	 *
-	 * @return string
 	 */
 	public function getEndpoint() : string{
 		return $this->endpoint;

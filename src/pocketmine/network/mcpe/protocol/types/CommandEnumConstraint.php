@@ -32,8 +32,11 @@ class CommandEnumConstraint{
 	private $constraints; //TODO: find constants
 
 	/**
+<<<<<<< HEAD
 	 * @param CommandEnum $enum
 	 * @param int         $valueOffset
+=======
+>>>>>>> upstream/stable
 	 * @param int[]       $constraints
 	 */
 	public function __construct(CommandEnum $enum, int $valueOffset, array $constraints){

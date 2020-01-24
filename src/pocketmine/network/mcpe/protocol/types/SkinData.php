@@ -49,6 +49,7 @@ class SkinData{
 	private $capeId;
 
 	/**
+<<<<<<< HEAD
 	 * @param string          $skinId
 	 * @param string          $resourcePatch
 	 * @param SkinImage       $skinImage
@@ -60,6 +61,9 @@ class SkinData{
 	 * @param bool            $persona
 	 * @param bool            $personaCapeOnClassic
 	 * @param string          $capeId
+=======
+	 * @param SkinAnimation[] $animations
+>>>>>>> upstream/stable
 	 */
 	public function __construct(string $skinId, string $resourcePatch, SkinImage $skinImage, array $animations = [], SkinImage $capeImage = null, string $geometryData = "", string $animationData = "", bool $premium = false, bool $persona = false, bool $personaCapeOnClassic = false, string $capeId = ""){
 		$this->skinId = $skinId;
@@ -75,23 +79,32 @@ class SkinData{
 		$this->capeId = $capeId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return string
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getSkinId() : string{
 		return $this->skinId;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return string
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getResourcePatch() : string{
 		return $this->resourcePatch;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return SkinImage
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getSkinImage() : SkinImage{
 		return $this->skinImage;
 	}
@@ -103,51 +116,72 @@ class SkinData{
 		return $this->animations;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return SkinImage
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getCapeImage() : SkinImage{
 		return $this->capeImage;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return string
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getGeometryData() : string{
 		return $this->geometryData;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return string
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getAnimationData() : string{
 		return $this->animationData;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return bool
 	 */
+=======
+>>>>>>> upstream/stable
 	public function isPersona() : bool{
 		return $this->persona;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return bool
 	 */
+=======
+>>>>>>> upstream/stable
 	public function isPremium() : bool{
 		return $this->premium;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return bool
 	 */
+=======
+>>>>>>> upstream/stable
 	public function isPersonaCapeOnClassic() : bool{
 		return $this->personaCapeOnClassic;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * @return string
 	 */
+=======
+>>>>>>> upstream/stable
 	public function getCapeId() : string{
 		return $this->capeId;
 	}

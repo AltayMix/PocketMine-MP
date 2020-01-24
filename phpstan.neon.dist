@@ -1,4 +1,5 @@
 includes:
+<<<<<<< HEAD
 	- tests/phpstan/configs/gc-hacks.neon
 	- tests/phpstan/configs/optional-com-dotnet.neon
 	- tests/phpstan/configs/optional-leveldb.neon
@@ -13,6 +14,29 @@ parameters:
 	paths:
 		- src
 	reportUnmatchedIgnoredErrors: false #no other way to silence platform-specific non-warnings
+=======
+	- tests/phpstan/configs/com-dotnet-magic.neon
+	- tests/phpstan/configs/custom-leveldb.neon
+	- tests/phpstan/configs/gc-hacks.neon
+	- tests/phpstan/configs/phpstan-bugs.neon
+	- tests/phpstan/configs/pthreads-bugs.neon
+	- tests/phpstan/configs/runtime-type-checks.neon
+
+parameters:
+	level: 6
+	autoload_files:
+		- tests/phpstan/bootstrap.php
+		- src/pocketmine/PocketMine.php
+		- build/server-phar.php
+	paths:
+		- src
+		- build/server-phar.php
+	dynamicConstantNames:
+		- pocketmine\IS_DEVELOPMENT_BUILD
+		- pocketmine\DEBUG
+	reportUnmatchedIgnoredErrors: false #no other way to silence platform-specific non-warnings
+	checkMissingIterableValueType: false #TODO: pthreads Threaded base for too many things, fix this later
+>>>>>>> upstream/stable
 	ignoreErrors:
 		-
 			message: "#^Cannot instantiate interface pocketmine\\\\level\\\\format\\\\io\\\\LevelProvider\\.$#"
@@ -81,11 +105,14 @@ parameters:
 			path: src/pocketmine/level/generator/normal/Normal.php
 
 		-
+<<<<<<< HEAD
 			message: "#^Used constant pocketmine\\\\RESOURCE_PATH not found\\.$#"
 			count: 1
 			path: src/pocketmine/network/mcpe/protocol/StartGamePacket.php
 
 		-
+=======
+>>>>>>> upstream/stable
 			message: "#^Constructor of class pocketmine\\\\scheduler\\\\TaskScheduler has an unused parameter \\$logger\\.$#"
 			count: 1
 			path: src/pocketmine/scheduler/TaskScheduler.php
@@ -103,18 +130,24 @@ parameters:
 			path: src
 
 		-
+<<<<<<< HEAD
 			message: "#^Constant pocketmine\\\\PATH not found\\.$#"
 			path: src
 
 		-
+=======
+>>>>>>> upstream/stable
 			message: "#^Constant pocketmine\\\\PLUGIN_PATH not found\\.$#"
 			path: src
 
 		-
+<<<<<<< HEAD
 			message: "#^Constant pocketmine\\\\RESOURCE_PATH not found\\.$#"
 			path: src
 
 		-
+=======
+>>>>>>> upstream/stable
 			message: "#^Constant pocketmine\\\\START_TIME not found\\.$#"
 			path: src
 

@@ -31,18 +31,31 @@ use pocketmine\Server;
 
 class PopulationTask extends AsyncTask{
 
+	/** @var bool */
 	public $state;
+	/** @var int */
 	public $levelId;
+	/** @var string */
 	public $chunk;
 
+	/** @var string */
 	public $chunk0;
+	/** @var string */
 	public $chunk1;
+	/** @var string */
 	public $chunk2;
+	/** @var string */
 	public $chunk3;
+
 	//center chunk
+
+	/** @var string */
 	public $chunk5;
+	/** @var string */
 	public $chunk6;
+	/** @var string */
 	public $chunk7;
+	/** @var string */
 	public $chunk8;
 
 	public function __construct(Level $level, Chunk $chunk){
@@ -56,11 +69,9 @@ class PopulationTask extends AsyncTask{
 	}
 
 	public function onRun(){
-		/** @var SimpleChunkManager $manager */
 		$manager = $this->getFromThreadStore("generation.level{$this->levelId}.manager");
-		/** @var Generator $generator */
 		$generator = $this->getFromThreadStore("generation.level{$this->levelId}.generator");
-		if($manager === null or $generator === null){
+		if(!($manager instanceof SimpleChunkManager) or !($generator instanceof Generator)){
 			$this->state = false;
 			return;
 		}

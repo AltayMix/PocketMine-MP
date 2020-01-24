@@ -56,6 +56,7 @@ class PlayerAuthInputPacket extends DataPacket/* implements ServerboundPacket*/{
 	private $vrGazeDirection = null;
 
 	/**
+<<<<<<< HEAD
 	 * @param Vector3      $position
 	 * @param float        $pitch
 	 * @param float        $yaw
@@ -68,6 +69,11 @@ class PlayerAuthInputPacket extends DataPacket/* implements ServerboundPacket*/{
 	 * @param Vector3|null $vrGazeDirection only used when PlayMode::VR
 	 *
 	 * @return self
+=======
+	 * @param int          $inputMode @see InputMode
+	 * @param int          $playMode @see PlayMode
+	 * @param Vector3|null $vrGazeDirection only used when PlayMode::VR
+>>>>>>> upstream/stable
 	 */
 	public static function create(Vector3 $position, float $pitch, float $yaw, float $headYaw, float $moveVecX, float $moveVecZ, int $inputFlags, int $inputMode, int $playMode, ?Vector3 $vrGazeDirection = null) : self{
 		if($playMode === PlayMode::VR and $vrGazeDirection === null){
@@ -85,7 +91,11 @@ class PlayerAuthInputPacket extends DataPacket/* implements ServerboundPacket*/{
 		$result->inputMode = $inputMode;
 		$result->playMode = $playMode;
 		if($vrGazeDirection !== null){
+<<<<<<< HEAD
 			$this->vrGazeDirection = $vrGazeDirection->asVector3();
+=======
+			$result->vrGazeDirection = $vrGazeDirection->asVector3();
+>>>>>>> upstream/stable
 		}
 		return $result;
 	}
@@ -120,7 +130,10 @@ class PlayerAuthInputPacket extends DataPacket/* implements ServerboundPacket*/{
 
 	/**
 	 * @see InputMode
+<<<<<<< HEAD
 	 * @return int
+=======
+>>>>>>> upstream/stable
 	 */
 	public function getInputMode() : int{
 		return $this->inputMode;
@@ -128,7 +141,10 @@ class PlayerAuthInputPacket extends DataPacket/* implements ServerboundPacket*/{
 
 	/**
 	 * @see PlayMode
+<<<<<<< HEAD
 	 * @return int
+=======
+>>>>>>> upstream/stable
 	 */
 	public function getPlayMode() : int{
 		return $this->playMode;

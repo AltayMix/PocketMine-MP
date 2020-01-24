@@ -45,11 +45,16 @@ class PlayerCreationEvent extends Event{
 	private $playerClass;
 
 	/**
+<<<<<<< HEAD
 	 * @param SourceInterface $interface
 	 * @param string          $baseClass
 	 * @param string          $playerClass
 	 * @param string          $address
 	 * @param int             $port
+=======
+	 * @param string          $baseClass
+	 * @param string          $playerClass
+>>>>>>> upstream/stable
 	 */
 	public function __construct(SourceInterface $interface, $baseClass, $playerClass, string $address, int $port){
 		$this->interface = $interface;
@@ -69,23 +74,14 @@ class PlayerCreationEvent extends Event{
 		$this->playerClass = $playerClass;
 	}
 
-	/**
-	 * @return SourceInterface
-	 */
 	public function getInterface() : SourceInterface{
 		return $this->interface;
 	}
 
-	/**
-	 * @return string
-	 */
 	public function getAddress() : string{
 		return $this->address;
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getPort() : int{
 		return $this->port;
 	}
@@ -99,6 +95,11 @@ class PlayerCreationEvent extends Event{
 
 	/**
 	 * @param string $class
+<<<<<<< HEAD
+=======
+	 *
+	 * @return void
+>>>>>>> upstream/stable
 	 */
 	public function setBaseClass($class){
 		if(!is_a($class, $this->baseClass, true)){
@@ -117,6 +118,11 @@ class PlayerCreationEvent extends Event{
 
 	/**
 	 * @param string $class
+<<<<<<< HEAD
+=======
+	 *
+	 * @return void
+>>>>>>> upstream/stable
 	 */
 	public function setPlayerClass($class){
 		if(!is_a($class, $this->baseClass, true)){

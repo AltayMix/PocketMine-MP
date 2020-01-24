@@ -28,8 +28,11 @@ use pocketmine\nbt\NBT;
 use pocketmine\nbt\NetworkLittleEndianNBTStream;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\ListTag;
+<<<<<<< HEAD
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\utils\BinaryDataException;
+=======
+>>>>>>> upstream/stable
 use function file_get_contents;
 use function getmypid;
 use function json_decode;
@@ -131,12 +134,6 @@ final class RuntimeBlockMapping{
 		return $table;
 	}
 
-	/**
-	 * @param int $id
-	 * @param int $meta
-	 *
-	 * @return int
-	 */
 	public static function toStaticRuntimeId(int $id, int $meta = 0) : int{
 		self::lazyInit();
 		/*
@@ -148,8 +145,6 @@ final class RuntimeBlockMapping{
 	}
 
 	/**
-	 * @param int $runtimeId
-	 *
 	 * @return int[] [id, meta]
 	 */
 	public static function fromStaticRuntimeId(int $runtimeId) : array{

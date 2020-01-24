@@ -26,7 +26,10 @@ namespace pocketmine\network\mcpe\protocol;
 #include <rules/DataPacket.h>
 
 use pocketmine\network\mcpe\NetworkSession;
+<<<<<<< HEAD
 use function base64_decode;
+=======
+>>>>>>> upstream/stable
 use function file_get_contents;
 
 class AvailableActorIdentifiersPacket extends DataPacket{

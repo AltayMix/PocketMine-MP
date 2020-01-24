@@ -44,8 +44,11 @@ class SkinAnimation{
 
 	/**
 	 * Image of the animation.
+<<<<<<< HEAD
 	 *
 	 * @return SkinImage
+=======
+>>>>>>> upstream/stable
 	 */
 	public function getImage() : SkinImage{
 		return $this->image;
@@ -53,8 +56,11 @@ class SkinAnimation{
 
 	/**
 	 * The type of animation you are applying.
+<<<<<<< HEAD
 	 *
 	 * @return int
+=======
+>>>>>>> upstream/stable
 	 */
 	public function getType() : int{
 		return $this->type;
@@ -62,8 +68,11 @@ class SkinAnimation{
 
 	/**
 	 * The total amount of frames in an animation.
+<<<<<<< HEAD
 	 *
 	 * @return float
+=======
+>>>>>>> upstream/stable
 	 */
 	public function getFrames() : float{
 		return $this->frames;
